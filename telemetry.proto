@@ -1,0 +1,30 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "SpaceHackathon.Grpc";
+
+package telemetry;
+
+// Uzay Haberleşme Servisi
+service TelemetryProcessor {
+  // Veriyi stream olarak gönderiyorum 
+  rpc ProcessStream (stream TelemetryRequest) 
+  returns (stream TelemetryResponse);
+}
+
+// Giden Paket 
+message TelemetryRequest {
+  int64 timestamp = 1;
+  string satellite_id = 2;
+  string sensor_type = 3;
+  double raw_value = 4;
+  string checksum = 5;
+}
+
+// Gelen Paket 
+message TelemetryResponse {
+  int64 timestamp = 1;
+  double cleaned_value = 2;
+  bool is_anomaly = 3;      // ML anomali buldu mu
+  float confidence = 4;   
+  string message = 5;      // message
+}
