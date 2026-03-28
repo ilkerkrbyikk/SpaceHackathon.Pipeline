@@ -1,0 +1,4 @@
+grpcio==1.78.0
+grpcio-tools==1.78.0
+scikit-learn==1.6.1
+numpy==2.2.5
