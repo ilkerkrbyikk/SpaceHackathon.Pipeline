@@ -26,8 +26,7 @@ if _version_not_supported:
 
 
 class TelemetryProcessorStub(object):
-    """Uzay Haberleşme Servisi
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -43,12 +42,10 @@ class TelemetryProcessorStub(object):
 
 
 class TelemetryProcessorServicer(object):
-    """Uzay Haberleşme Servisi
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def ProcessStream(self, request_iterator, context):
-        """Veriyi stream olarak gönderiyorum 
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -70,8 +67,7 @@ def add_TelemetryProcessorServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TelemetryProcessor(object):
-    """Uzay Haberleşme Servisi
-    """
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def ProcessStream(request_iterator,

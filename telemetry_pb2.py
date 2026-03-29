@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0ftelemetry.proto\x12\ttelemetry\"u\n\x10TelemetryRequest\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x14\n\x0csatellite_id\x18\x02 \x01(\t\x12\x13\n\x0bsensor_type\x18\x03 \x01(\t\x12\x11\n\traw_value\x18\x04 \x01(\x01\x12\x10\n\x08\x63hecksum\x18\x05 \x01(\t\"v\n\x11TelemetryResponse\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x15\n\rcleaned_value\x18\x02 \x01(\x01\x12\x12\n\nis_anomaly\x18\x03 \x01(\x08\x12\x12\n\nconfidence\x18\x04 \x01(\x02\x12\x0f\n\x07message\x18\x05 \x01(\t2d\n\x12TelemetryProcessor\x12N\n\rProcessStream\x12\x1b.telemetry.TelemetryRequest\x1a\x1c.telemetry.TelemetryResponse(\x01\x30\x01\x42\x16\xaa\x02\x13SpaceHackathon.Grpcb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0ftelemetry.proto\x12\ttelemetry\"u\n\x10TelemetryRequest\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x14\n\x0csatellite_id\x18\x02 \x01(\t\x12\x13\n\x0bsensor_type\x18\x03 \x01(\t\x12\x11\n\traw_value\x18\x04 \x01(\x01\x12\x10\n\x08\x63hecksum\x18\x05 \x01(\t\"\xa4\x01\n\x11TelemetryResponse\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x15\n\rcleaned_value\x18\x02 \x01(\x01\x12\x12\n\nis_anomaly\x18\x03 \x01(\x08\x12\x12\n\nconfidence\x18\x04 \x01(\x02\x12\x0f\n\x07message\x18\x05 \x01(\t\x12,\n\x0c\x61nomaly_type\x18\x06 \x01(\x0e\x32\x16.telemetry.AnomalyType*7\n\x0b\x41nomalyType\x12\x08\n\x04NONE\x10\x00\x12\t\n\x05SPIKE\x10\x01\x12\x08\n\x04\x44ROP\x10\x02\x12\t\n\x05\x44RIFT\x10\x03\x32\x64\n\x12TelemetryProcessor\x12N\n\rProcessStream\x12\x1b.telemetry.TelemetryRequest\x1a\x1c.telemetry.TelemetryResponse(\x01\x30\x01\x42\x16\xaa\x02\x13SpaceHackathon.Grpcb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,10 +32,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'telemetry_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\252\002\023SpaceHackathon.Grpc'
+  _globals['_ANOMALYTYPE']._serialized_start=316
+  _globals['_ANOMALYTYPE']._serialized_end=371
   _globals['_TELEMETRYREQUEST']._serialized_start=30
   _globals['_TELEMETRYREQUEST']._serialized_end=147
-  _globals['_TELEMETRYRESPONSE']._serialized_start=149
-  _globals['_TELEMETRYRESPONSE']._serialized_end=267
-  _globals['_TELEMETRYPROCESSOR']._serialized_start=269
-  _globals['_TELEMETRYPROCESSOR']._serialized_end=369
+  _globals['_TELEMETRYRESPONSE']._serialized_start=150
+  _globals['_TELEMETRYRESPONSE']._serialized_end=314
+  _globals['_TELEMETRYPROCESSOR']._serialized_start=373
+  _globals['_TELEMETRYPROCESSOR']._serialized_end=473
 # @@protoc_insertion_point(module_scope)

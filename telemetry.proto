@@ -4,27 +4,31 @@ option csharp_namespace = "SpaceHackathon.Grpc";
 
 package telemetry;
 
-// Telemetri akışı sağlayan servis tanımı.
 service TelemetryProcessor {
-  // İstemciden gelen veriyi akış halinde alır ve işlenmiş sonucu döner.
-  rpc ProcessStream (stream TelemetryRequest) 
+  rpc ProcessStream (stream TelemetryRequest)
   returns (stream TelemetryResponse);
 }
 
-// İstemcinin gönderdiği ham telemetri paketi.
-message TelemetryRequest {
-  int64 timestamp = 1;
-  string satellite_id = 2;
-  string sensor_type = 3;
-  double raw_value = 4;
-  string checksum = 5;
+enum AnomalyType {
+  NONE  = 0;
+  SPIKE = 1;
+  DROP  = 2;
+  DRIFT = 3;
 }
 
-// Sunucunun döndürdüğü işlenmiş telemetri paketi.
+message TelemetryRequest {
+  int64  timestamp    = 1;
+  string satellite_id = 2;
+  string sensor_type  = 3;
+  double raw_value    = 4;
+  string checksum     = 5;
+}
+
 message TelemetryResponse {
-  int64 timestamp = 1;
-  double cleaned_value = 2;
-  bool is_anomaly = 3;      // Anomali algılanıp algılanmadığını belirtir.
-  float confidence = 4;   
-  string message = 5;       // İnsan okunabilir durum mesajı.
+  int64       timestamp     = 1;
+  double      cleaned_value = 2;
+  bool        is_anomaly    = 3;
+  float       confidence    = 4;
+  string      message       = 5;
+  AnomalyType anomaly_type  = 6;
 }
